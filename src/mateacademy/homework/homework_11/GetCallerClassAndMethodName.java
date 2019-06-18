@@ -10,5 +10,4 @@ public class GetCallerClassAndMethodName {
             return null;
         }
     }
-
 }

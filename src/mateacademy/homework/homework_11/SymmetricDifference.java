@@ -4,7 +4,6 @@ import java.util.EmptyStackException;
 import java.util.Set;
 import java.util.HashSet;
 
-
 public class SymmetricDifference<T> {
 
     public static <T> Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
