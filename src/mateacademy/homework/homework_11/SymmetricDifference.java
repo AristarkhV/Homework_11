@@ -8,7 +8,6 @@ public class SymmetricDifference<T> {
 
     public static <T> Set<T> symmetricDifference(Set<? extends T> set1, Set<? extends T> set2) {
 
-        Set<T> resultSet = new HashSet<>();
         System.out.println("First set:");
         for (T t : set1) {
             System.out.print(t + " ");
@@ -18,17 +17,16 @@ public class SymmetricDifference<T> {
             System.out.print(t + " ");
         }
         System.out.println();
-        for (T t : set1) {
-            if (!set2.contains(t)) {
-                resultSet.add(t);
-            }
-        }
-        for (T t : set2) {
-            if (!set1.contains(t)) {
-                resultSet.add(t);
-            }
-        }
-        return resultSet;
+        HashSet temp = new HashSet<>();
+        temp.addAll(set1);
+        temp.removeAll(set2);
+
+        HashSet result = new HashSet<>();
+        result.addAll(set2);
+        result.removeAll(set1);
+
+        temp.addAll(result);
+        return temp;
     }
 
     public void print(Set<? extends T> set) {

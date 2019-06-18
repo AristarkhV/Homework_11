@@ -11,11 +11,11 @@ public class StrModifier {
     private Scanner scanner;
     private ArrayDeque arrayDeque;
 
-    public StrModifier() {
-        i = 0;
+    public void modify() {
         scanner = new Scanner(System.in);
         arrayDeque = new ArrayDeque();
-        System.out.println("set the string, put . in the end:");
+        System.out.println("set the string");
+        i = 0;
         while (scanner.hasNextInt()) {
             container = scanner.nextInt();
             if (i % 2 != 0) {
@@ -23,9 +23,6 @@ public class StrModifier {
             }
             i++;
         }
-    }
-
-    public void modify() {
         Iterator<Integer> iterator = arrayDeque.descendingIterator();
         while (iterator.hasNext()) {
             container = iterator.next();
